@@ -1,6 +1,6 @@
 Name:		python-maxminddb
 Version:	3.2.0
-Release:	1
+Release:	2
 Summary:	Reader for the MaxMind DB format
 License:	Apache-2.0
 Group:		Development/Python
@@ -15,6 +15,10 @@ BuildRequires:	gcc
 BuildRequires:	lib64python-devel
 %description
 Reader for the MaxMind DB format.
+
+%build -p
+# The sdist is not a git checkout, so the versioning backend needs the version.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %files
 %{python_sitearch}/*
